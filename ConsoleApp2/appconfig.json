@@ -1,6 +1,7 @@
 {
   "ConnectionStrings": {
-    "SqlConnection": "Data Source=LIM-LP01542\\MSSQLSERVER01;Database=BELATRIX;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;"
+    //"SqlConnection": "Data Source=LIM-LP01542\\MSSQLSERVER01;Database=BELATRIX;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;",
+    "SqlConnection": "Server=HIDEAKIUCHIDA;Database=BELATRIX;Integrated Security=True;"
   },
   "AppSettings": {
     "LogFileDirectory": ".\\"

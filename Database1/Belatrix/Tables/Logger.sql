@@ -1,0 +1,6 @@
+﻿CREATE TABLE [dbo].[Logger]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+	[Message] VARCHAR(500) NOT NULL,
+	[Type] INT NOT NULL
+)
