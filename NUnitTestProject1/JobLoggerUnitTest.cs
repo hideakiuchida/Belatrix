@@ -18,7 +18,7 @@ namespace NUnitTestProject1
         private readonly string InvalidMessage = default;
         public JobLoggerUnitTest()
         {
-            var databaseRepositoryMock = new Mock<DatabaseRepository>(MockBehavior.Strict);
+            var databaseRepositoryMock = new Mock<ILogRepository>(MockBehavior.Strict);
             databaseRepositoryMock.Setup(x => x.Log(ValidMessage, TypeLogEnum.Message)).Returns(true);
             databaseRepositoryMock.Setup(x => x.Log(ValidMessage, TypeLogEnum.Warning)).Returns(true);
             databaseRepositoryMock.Setup(x => x.Log(ValidMessage, TypeLogEnum.Error)).Returns(true);
@@ -27,7 +27,7 @@ namespace NUnitTestProject1
             databaseRepositoryMock.Setup(x => x.Log(InvalidMessage, TypeLogEnum.Error)).Returns(false);
             _databaseRepository = databaseRepositoryMock.Object;
 
-            var fileRepositoryMock = new Mock<FileRepository>(MockBehavior.Strict);
+            var fileRepositoryMock = new Mock<ILogRepository>(MockBehavior.Strict);
             fileRepositoryMock.Setup(x => x.Log(ValidMessage, TypeLogEnum.Message)).Returns(true);
             fileRepositoryMock.Setup(x => x.Log(ValidMessage, TypeLogEnum.Warning)).Returns(true);
             fileRepositoryMock.Setup(x => x.Log(ValidMessage, TypeLogEnum.Error)).Returns(true);
@@ -36,7 +36,7 @@ namespace NUnitTestProject1
             fileRepositoryMock.Setup(x => x.Log(InvalidMessage, TypeLogEnum.Error)).Returns(false);
             _fileRepository = fileRepositoryMock.Object;
 
-            var consoleRepositoryMock = new Mock<ConsoleRepository>(MockBehavior.Strict);
+            var consoleRepositoryMock = new Mock<ILogRepository>(MockBehavior.Strict);
             consoleRepositoryMock.Setup(x => x.Log(ValidMessage, TypeLogEnum.Message)).Returns(true);
             consoleRepositoryMock.Setup(x => x.Log(ValidMessage, TypeLogEnum.Warning)).Returns(true);
             consoleRepositoryMock.Setup(x => x.Log(ValidMessage, TypeLogEnum.Error)).Returns(true);
